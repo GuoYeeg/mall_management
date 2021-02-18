@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body,html{
+    height: 100%;
+  }
+  .box{
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+  }
+  .l{
+    float: left;
+    width: 600px;
+    height: 100%;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+  }
+  .r{
+    overflow: auto;
+    /* margin-left:605px; */
+    height: 100%;
+    background-color: pink;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+
+  }
+</style>
+<body>
+
+    <div class="l" onclick="changew()" id="l"></div>
+    <div class="r" id="r"></div>
+
+</body>
+<script>
+  changew=()=>{
+    l=document.getElementById('l')
+    r=document.getElementById('r')
+    l.style.width=50+'px'
+    r.style.marginLeft=55+'px'
+  }
+</script>
+</html>

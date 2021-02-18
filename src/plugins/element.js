@@ -1,4 +1,15 @@
 import Vue from 'vue'
-import { Button } from 'element-ui'
 
-Vue.use(Button)
+import '../plugins/element.js'
+import 'element-ui/lib/theme-chalk/index.css';
+import { Button, Select ,Form,Input,FormItem,Message,Menu,MenuItem,Submenu} from 'element-ui';
+Vue.component(Button.name, Button);
+Vue.component(Select.name, Select);
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu)
+
+Vue.prototype.$message=Message
