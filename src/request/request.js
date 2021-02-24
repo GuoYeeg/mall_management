@@ -9,6 +9,11 @@ const instance =axios.create({
 
 //请求拦截器
 instance.interceptors.request.use(configs=>{
+  let token=localStorage.getItem('mall-managment-token')
+  if(token){
+    configs.headers=configs.headers || {}
+    configs.headers['X-Nideshop-Token']=token
+  }
   return configs;
 },err=>{
   return Promise.reject(err)

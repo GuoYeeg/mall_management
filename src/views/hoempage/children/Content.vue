@@ -1,6 +1,6 @@
 <template>
   <div class="content" :style="fixWidth">
-    12
+    <router-view/>
   </div>
 </template>
  

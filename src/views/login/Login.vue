@@ -79,8 +79,6 @@ export default {
               //跳转路由
               this.$router.push('/')
             }
-            
-            
           })
         } else{ //校验不成功
           console.log(unpass);

@@ -1,14 +1,14 @@
 <template>
   <div class="nav">
     <el-menu
-      default-active="0"
+      :default-active="$route.path"
       :collapse="isCollapse"
       :collapse-transition="true"
       :router="true"
       class="el-menu-vertical-demo"
       background-color="#324157"
       text-color="#BFCBD9"
-      active-text-color="#BFCBD9">
+      active-text-color="#409EFF">
       <el-submenu :index="index+''" v-for="item,index in menuConfig" :key="item.title">
         <template slot="title">
           <i class="el-icon-location"></i>
