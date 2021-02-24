@@ -46,7 +46,7 @@ export default {
   /* margin-left: -10px; */
   /* width: 100%; */
   /* background-color: #F0F0F0; */
-  background-color: red;
+  /* background-color: red; */
   transition: width .3s ease-in-out;
 }
 </style>

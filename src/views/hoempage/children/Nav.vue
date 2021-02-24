@@ -73,24 +73,24 @@ export default {
       return pre
     },{})
 
-    console.log(arrObj);
+    // console.log(arrObj);
 
     var initMenu=this.menuConfig
     var actualArr=[]
     for(var i=0;i<initMenu.length;i++){
       var item={title:'',subarr:[]}
       for(var j=0;j<initMenu[i].subarr.length;j++){
-        console.log(initMenu[i].subarr[j].path);
+        // console.log(initMenu[i].subarr[j].path);
         if(arrObj[initMenu[i].subarr[j].path]){
           item.title=initMenu[i].title
           item.subarr.push(JSON.parse(JSON.stringify(initMenu[i].subarr[j])))
-          console.log(initMenu[i].subarr[j]);
+          // console.log(initMenu[i].subarr[j]);
         }
       }
       if(item.title)
         actualArr.push(item)
     }
-    console.log(actualArr);
+    // console.log(actualArr);
     this.menuConfig=actualArr
   },
   beforeDestroy(){

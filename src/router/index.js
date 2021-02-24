@@ -45,6 +45,10 @@ const routesArr={
     path:'/attribute',
     component:()=>import('@/views/attribute/Attribute.vue')
   },
+  "/editgood":{
+    path:'/editgood',
+    component:()=>import('@/views/good/EditePage.vue')
+  }
 }
 
 
@@ -59,7 +63,7 @@ router.beforeEach((to,from,next)=>{
   let token=localStorage.getItem('mall-managment-token')
   if(token && store.state.menu.length===0){ //第二个条件是为了next的时候不死循环
     GetUserInfoApi().then(res=>{
-      console.log(res);
+      // console.log(res);
       if(res.errno==0){
         //设置vuex中的menu权限
         store.commit(SETMENU,res.data.menu) 
