@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './plugins/element'
 import './style/style.css'
+import '@/plugins/vcharts'
 
 import bus from '@/eventbus'
 Vue.config.productionTip = false

@@ -76,6 +76,7 @@ export default {
               localStorage.setItem('mall-managment-token',res.data.token)
               //将用户功能权限菜单存到vuex
               this.$store.commit(SETMENU,res.data.menu)
+              console.log(res.data.menu);
               //跳转路由
               this.$router.push('/')
             }

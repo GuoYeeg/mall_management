@@ -7,3 +7,7 @@ export const GetUserInfoApi = (params) => request.post('/admin/auth/getUserByTok
 export const GetGoodApi = (params) => request.get('/admin/goods',{params})
 // 上传图片
 export const UploadGoodPicApi = (params) => request.post('/admin/upload/goodNewPic',params)
+//获取运营数据
+export const GetStatApi = (params) => request.get('/admin/stat',{params})
+
+
