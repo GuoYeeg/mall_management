@@ -52,6 +52,10 @@ const routesArr={
   "/statdata":{
     path:'/statdata',
     component:()=>import('@/views/statdata/Statdata.vue')
+  },
+  "/addgood":{
+    path:'/addgood',
+    component:()=>import('@/views/good/Addgood.vue')
   }
 }
 

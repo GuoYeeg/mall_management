@@ -1,5 +1,11 @@
 <template>
-  <div class="">
+  <div class="good">
+    <div class="sear_box">
+      <el-input v-model="searinput" placeholder="商品名称" size="small" style="width:200px;margin:5px 10px 5px 0;"></el-input>
+      <el-button type="primary" @click="searGood" size="small" >查询</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/addgood')">添加</el-button>
+      <el-button type="primary" size="small">重置</el-button>
+    </div>
     <el-table :data="tableData" border style="width: 100%">
       <el-table-column prop="id" label="ID" > </el-table-column>
       <el-table-column prop="name" label="商品名称" width="240"> </el-table-column>
@@ -36,6 +42,7 @@ export default {
   data() {
     return {
       msg: "Welcome to your vueName",
+      searinput:'',
       tableData:[],
       currentPage:1,
       totalItem:0,
@@ -43,6 +50,25 @@ export default {
     };
   },
   methods:{
+    searGood(){
+      if(this.searinput==''){
+        this.$message({
+          message:'请输入查询内容',
+          type:'error',
+          duration:800
+        })
+        return
+      }
+
+      GetGoodApi({
+        page:'1',
+        name:this.searinput,
+        size:'10'
+      }).then((res)=>{
+        this.tableData=res.data.data
+        this.totalItem=res.data.count
+      })
+    },
     toEditePage(){
       this.$router.push('/editgood')
     },
@@ -75,7 +101,13 @@ export default {
 </script>
  
 <style scoped lang = "less">
+
 .el-pagination{
   float: right;
+}
+.sear_box{
+  width: 100%;
+  float: left;
+
 }
 </style>

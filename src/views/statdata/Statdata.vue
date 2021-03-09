@@ -150,7 +150,7 @@ export default {
   .op{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 30px ;
   }
 }
 
