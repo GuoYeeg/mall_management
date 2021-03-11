@@ -37,6 +37,7 @@
  
 <script>
 import {GetGoodApi} from '@/request/api'
+
 export default {
   name: "Good",
   data() {

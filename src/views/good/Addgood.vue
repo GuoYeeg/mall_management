@@ -60,7 +60,9 @@
         </el-form>
 
       </el-tab-pane>
-      <el-tab-pane label="商品详情">商品详情</el-tab-pane>
+      <el-tab-pane label="商品详情">
+        <Editor @input="getEditeContent"/>
+      </el-tab-pane>
     </el-tabs>
 
   </div>
@@ -68,6 +70,7 @@
  
 <script>
 import {UploadGoodPicApi,GetCategoryApi,GetBrandApi,AddGoodApi} from '@/request/api'
+import Editor from '@/components/Editor'
 export default {
   name: 'EditePage',
   data () {
@@ -76,6 +79,7 @@ export default {
       imageUrl:'',
       categoryOp:[],
       brandOp:[],
+      editorContent:{},
       form:{
         recomtype:[],
         category:'',
@@ -131,6 +135,9 @@ export default {
   },
 
   methods:{
+    getEditeContent(value){
+      this.editorContent=value
+    },
     onSubmit() {
       console.log(this.form);
       AddGoodApi({
@@ -139,7 +146,7 @@ export default {
         brand_id:this.form.brand,
         goods_number:this.form.stock,
         goods_brief:this.form.desc,
-        goods_desc:'',
+        goods_desc:this.editorContent,
         sort_order:this.form.sort,
         is_delete:this.form.is_onsale?1:0,
         is_new:this.form.recomtype.indexOf('新品')!=-1?1:0,
@@ -171,6 +178,9 @@ export default {
     beforeAvatarUpload(){ //function(file)
     }
   },
+  components:{
+    Editor
+  }
 }
 </script>
  
