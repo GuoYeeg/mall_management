@@ -45,10 +45,6 @@ const routesArr={
     path:'/attribute',
     component:()=>import('@/views/attribute/Attribute.vue')
   },
-  "/editgood":{
-    path:'/editgood',
-    component:()=>import('@/views/good/EditePage.vue')
-  },
   "/statdata":{
     path:'/statdata',
     component:()=>import('@/views/statdata/Statdata.vue')
